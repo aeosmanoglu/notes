@@ -9,16 +9,18 @@
     - [1.3.3. Nesneye Yönelik Programlama](#133-nesneye-yönelik-programlama)
     - [1.3.4. Programlama Ortamı](#134-programlama-ortamı)
   - [1.4. İşletim Sistemleri](#14-i̇şletim-sistemleri)
-    - [1.4.1. İşletim Sistemlerinin Temel İşlevleri](#141-i̇şletim-sistemlerinin-temel-i̇şlevleri)
-    - [1.4.2. Sistem Performansı](#142-sistem-performansı)
-    - [1.4.3. Çekirdek Sistem](#143-çekirdek-sistem)
-    - [1.4.4. Proses Yönetimi](#144-proses-yönetimi)
-    - [1.4.5. Bellek Yönetimi](#145-bellek-yönetimi)
+    - [1.4.1. Bilgisayar Sistemi Bileşenleri](#141-bilgisayar-sistemi-bileşenleri)
+    - [1.4.2. İşletim Sistemlerinin Temel İşlevleri](#142-i̇şletim-sistemlerinin-temel-i̇şlevleri)
+    - [1.4.3. Sistem Performansı](#143-sistem-performansı)
+    - [1.4.4. Çekirdek Sistem](#144-çekirdek-sistem)
+    - [1.4.5. Proses Yönetimi](#145-proses-yönetimi)
+    - [1.4.6. Bellek Yönetimi](#146-bellek-yönetimi)
 - [2. Bilgisayar Mimarisi ve Tasarım](#2-bilgisayar-mimarisi-ve-tasarım)
 - [3. Bilgisayar Ağları](#3-bilgisayar-ağları)
 - [4. Veri Yapıları ve Algoritmalar](#4-veri-yapıları-ve-algoritmalar)
 - [5. Java ile Programlama](#5-java-ile-programlama)
 - [6. İşletim Sistemleri](#6-i̇şletim-sistemleri)
+  - [6.1. İşletim Sistemlerine Giriş](#61-i̇şletim-sistemlerine-giriş)
 - [7. Veri Tabanı Yönetim Sistemleri](#7-veri-tabanı-yönetim-sistemleri)
 - [8. Yazılım Mühendisliği](#8-yazılım-mühendisliği)
 - [9. Web Programlama](#9-web-programlama)
@@ -109,7 +111,14 @@ s2-->2[Makine Kodu]
 
 ## 1.4. İşletim Sistemleri
 
-### 1.4.1. İşletim Sistemlerinin Temel İşlevleri
+### 1.4.1. Bilgisayar Sistemi Bileşenleri
+
+1. Donanım
+2. İşletim sistemi
+3. Sistem ve uygulama programları
+4. Kullanıcılar
+
+### 1.4.2. İşletim Sistemlerinin Temel İşlevleri
 
 1. Yazılım donanım bütünlüğünün sağlanması
 2. Kaynakların yönetimi
@@ -119,7 +128,7 @@ s2-->2[Makine Kodu]
    2. Toplu işlem (batch)
    3. Etkileşimli işlem (interactive, time sharing)
 
-### 1.4.2. Sistem Performansı
+### 1.4.3. Sistem Performansı
 
 1. **Verimlilik:** Sistem kaynaklarının düşük kullanımı
 2. **Güvenilirlik:** Donanım ve yazılım yüzünden doğacak sorunları sezebilmeli ve önlemeli
@@ -127,13 +136,13 @@ s2-->2[Makine Kodu]
 4. **Sezdiricilik**
 5. **Elverişlilik:** Kullanıcı sistemin kaynaklarını kendi isteğine göre değil sistemin izin verdiği ölçüde kullanmalı
 
-### 1.4.3. Çekirdek Sistem
+### 1.4.4. Çekirdek Sistem
 
 1. İşlemciye prosesleri atamak
 2. Kesmeleri yönetmek
 3. Prosesler arasında iletişimi sağlamak
 
-### 1.4.4. Proses Yönetimi
+### 1.4.5. Proses Yönetimi
 
 > **Proses:** kendi veri şablonu olan ve kendi başına bütünlüğü olan kod parçası
 
@@ -150,7 +159,7 @@ s2-->2[Makine Kodu]
 
 > **Semafor:** Bir çeşit değişken. Signal ve Wait'tir.
 
-### 1.4.5. Bellek Yönetimi
+### 1.4.6. Bellek Yönetimi
 
 | Bellek                           | Statik/Dinamik | Gerçek/Sanal |
 | -------------------------------- | -------------- | ------------ |
@@ -171,6 +180,26 @@ s2-->2[Makine Kodu]
 # 5. Java ile Programlama
 
 # 6. İşletim Sistemleri
+
+## 6.1. İşletim Sistemlerine Giriş
+
+:::mermaid
+flowchart LR
+1[Uygulama Programları]
+2[Kullanıcı]
+3[Kabuk]
+4[Sistem Çağrıları Arayüzü]
+5[Çekirdek]
+6[Donanım]
+1<-->2
+subgraph İşletim Sistemi
+3<--Kullanıcı kipi-->4
+4<--Sistem kipi-->5
+end
+1<-->3
+2<-->3
+5<-->6
+:::
 
 # 7. Veri Tabanı Yönetim Sistemleri
 
