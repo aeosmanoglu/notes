@@ -20,7 +20,11 @@
 - [4. Veri Yapıları ve Algoritmalar](#4-veri-yapıları-ve-algoritmalar)
 - [5. Java ile Programlama](#5-java-ile-programlama)
 - [6. İşletim Sistemleri](#6-i̇şletim-sistemleri)
-  - [6.1. İşletim Sistemlerine Giriş](#61-i̇şletim-sistemlerine-giriş)
+  - [6.1. Bilgisayarlar ve İşletim Sistemleri](#61-bilgisayarlar-ve-i̇şletim-sistemleri)
+  - [6.2. Bilgisayar Mimarileri](#62-bilgisayar-mimarileri)
+    - [6.2.1. CISC (complex instruction set computer) Mimarisi](#621-cisc-complex-instruction-set-computer-mimarisi)
+    - [6.2.2. RISC (reduced instruction sasetid computer) Mimarisi](#622-risc-reduced-instruction-sasetid-computer-mimarisi)
+    - [6.2.3. İşletim Sistemleri Ağ Özellikleri](#623-i̇şletim-sistemleri-ağ-özellikleri)
 - [7. Veri Tabanı Yönetim Sistemleri](#7-veri-tabanı-yönetim-sistemleri)
 - [8. Yazılım Mühendisliği](#8-yazılım-mühendisliği)
 - [9. Web Programlama](#9-web-programlama)
@@ -30,9 +34,9 @@
 
 ## 1.1. Temel Kavramlar
 
-**Birleşik mantık devreleri** VE, VEYA gibi kapılardan oluşur ve devrenin çıktısı sadece o anki girdilere bağlıdır. **Sıralı/Ardışıl mantık devreleri (flip-flop)** hem o andaki girdilere hem de bir önceki çıktıya bağlıdır. Bu devreler saat darbeleri ile çalışır.
+> **Birleşik mantık devreleri** VE, VEYA gibi kapılardan oluşur ve devrenin çıktısı sadece o anki girdilere bağlıdır. **Sıralı/Ardışıl mantık devreleri (flip-flop)** hem o andaki girdilere hem de bir önceki çıktıya bağlıdır. Bu devreler saat darbeleri ile çalışır.
 
-Assembly diliyle yazılmış programların çalışması için makina koduna dönüştürülmesi gerekir. Her işlemci ailesinin kendine has makina kodu ve assembly dili vardır.
+> Assembly diliyle yazılmış programların çalışması için makina koduna dönüştürülmesi gerekir. Her işlemci ailesinin kendine has makina kodu ve assembly dili vardır.
 
 ## 1.2. Algoritma ve Akış Şemaları
 
@@ -181,25 +185,78 @@ s2-->2[Makine Kodu]
 
 # 6. İşletim Sistemleri
 
-## 6.1. İşletim Sistemlerine Giriş
+## 6.1. Bilgisayarlar ve İşletim Sistemleri
 
 :::mermaid
 flowchart LR
-1[Uygulama Programları]
-2[Kullanıcı]
-3[Kabuk]
-4[Sistem Çağrıları Arayüzü]
-5[Çekirdek]
-6[Donanım]
+2(Uygulama Programları)
+1(Kullanıcı)
+3(Kabuk)
+4(Sistem Çağrıları Arayüzü)
+5(Çekirdek)
+6(Donanım)
+subgraph Bilgisayar Sistemi
 1<-->2
-subgraph İşletim Sistemi
-3<--Kullanıcı kipi-->4
-4<--Sistem kipi-->5
-end
 1<-->3
 2<-->3
+subgraph İşletim Sistemi
+3<--Kullanıcı Kipi-->4
+4<--Çekirdek Kipi-->5
+end
 5<-->6
+end
 :::
+
+## 6.2. Bilgisayar Mimarileri
+
+|                       | Harvard Mimarisi                                              | von Neumann Mimarisi                                                             |
+| --------------------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| Düzenleme             | ROM komutlar, RAM veri için. Belleğe erişim yolları bağımsız. | ROM bilgisayarın açılışı, RAM veri ve kodlar için. Belleğe erişim yolları ortak. |
+| Donanım Gereksinimi   | Karmaşık                                                      | Basit                                                                            |
+| Alan Gereksinimi      | Çok                                                           | Az                                                                               |
+| Komut Çalıştırma Hızı | Yüksek                                                        | Düşük                                                                            |
+| Bellek Alan Kullanımı | Çok                                                           | Az ve efektif                                                                    |
+| Kontrol Karmaşıklığı  | Yüksek                                                        | Az                                                                               |
+
+### 6.2.1. CISC (complex instruction set computer) Mimarisi
+
+CISC mimarisi yüksek seviyeli programlama dillerindeki ifadelerin makine dilinde benzer şekilde doğrudan ifade edilmesine imkan sağlayacak şekilde tasarlanmıştır. Bunun gereği olarak CISC mimarisinde komut yapısı operantlardan en az bir tanesinin birlikte olmasını öngörür ve komutlar birden fazla alt operasyondan oluşurlar.
+
+### 6.2.2. RISC (reduced instruction sasetid computer) Mimarisi
+
+CISC mimarisi kullanıcı odaklı iken RISC mimarisi donanım odaklı bir tasarıma sahiptir. RISC mimarisinde alt operasyonların böl ve yönet mantığına göre bellekten okuma, aritmetik lojik işlem yapma ve belleğe yazma olmak üzere birbirinden bağımsız üç ayrı komik şekilde ifade edilmesi ile ortadan kaldırmıştır. Bu yaklaşımın sonucu RISC mimarisindeki bütün komutların uzunluğu birbirine eşittir ve aritmetik lojik i̇şlemler sadece saklıcılar içinde gerçekleştirilir.
+
+```
+/* CISC */
+MULT Addr1, Addr2
+
+/* RISC */
+LOAD A, Addr1
+LOAD B, Addr2
+PROD A, B
+STORE Addr1, A
+
+```
+
+| CISC                                               | RISC                                              |
+| -------------------------------------------------- | ------------------------------------------------- |
+| donanıma yük biner                                 | yazılıma yük biner                                |
+| çok saat döngüsü ile çalışan karmaşık komutlar     | tek saat döngüsünde tamamlanabilen basit komutlar |
+| az birleştirici kodu                               | çok birleştirici kodu                             |
+| transistörler karmaşık kod tasarım için kullanılır | transistörler saplayıcılar için kullanılır        |
+
+### 6.2.3. İşletim Sistemleri Ağ Özellikleri
+
+**Linux:** Kullanıcı uygulamaları tüm isteklerini soket arabirimi üzerinden gerçekleştirir. Linux ağ katmanı BSD soket katmanı alt yapısı üzerine inşa edilmiştir. Herhangi bir ağ verisi bu katmana bir uygulamanın soketinden veya bir ağ aygıtı sürücüsünden geldiğinde verilerin hangi ağ protokolünü içerdiklerini belirten bir tamamlayıcıyla etiketlenmiş olması beklenir.
+
+**Windows:** Ağ arttırım protokollerini sürücüler üzerinden uygulamaktadır.
+
+1.  Sunucu ileti blogu (SMB) protokolü: Sistem üzerinden giriş çıkış isteklerinin gönderilmesi, oturumunda denetimi, sunucudan kaynana yönlendirme bağlantısını başlatan ve sonlandıran, yeniden yönlendirme süreçlerini yöneten, dosyalara erişim kontrollerini yapan, ağ üzerindeki yazılara veri gönderim süreçleri yöneten protokol. Yeni adıı Ortak İnternet Dosya Sistemi (CIFS)
+2.  İletim Kontrol Protokolü: Basit ağ Yönetim Protokolü (SNMP), dinamik ana bilgisayar yapılandırma protokolü (DHCP) ve Windows İnternet Ad (WINS) gibi hizmetleri içerir.
+3.  Noktadan noktaya tünel protokolü (PPTP)
+4.  HTTP
+5.  Uzaktan Yordan Çağrıları (RPC)/(VPN)
+6.  Bileşen nesne modeli (COM)/(DCOM)
 
 # 7. Veri Tabanı Yönetim Sistemleri
 
