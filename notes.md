@@ -39,6 +39,11 @@
     - [3.4.3. Saldırı Tespit Sistemleri (IDS-Intrusion Detection Systems)](#343-saldırı-tespit-sistemleri-ids-intrusion-detection-systems)
     - [3.4.4. Şifreleme](#344-şifreleme)
 - [4. Veri Yapıları ve Algoritmalar](#4-veri-yapıları-ve-algoritmalar)
+  - [4.1. Bilgisayar Yazılım Dünyası](#41-bilgisayar-yazılım-dünyası)
+  - [4.2. Veri Yapıları ve Veri Modelleri](#42-veri-yapıları-ve-veri-modelleri)
+    - [4.2.1. Veri Modeli Türleri](#421-veri-modeli-türleri)
+  - [4.3. Sıralama Algoritmaları](#43-sıralama-algoritmaları)
+  - [4.4. Arama Algoritmaları](#44-arama-algoritmaları)
 - [5. Java ile Programlama](#5-java-ile-programlama)
 - [6. İşletim Sistemleri](#6-i̇şletim-sistemleri)
   - [6.1. Bilgisayarlar ve İşletim Sistemleri](#61-bilgisayarlar-ve-i̇şletim-sistemleri)
@@ -497,6 +502,75 @@ A->>B: Data
    2. SHA
 
 # 4. Veri Yapıları ve Algoritmalar
+
+## 4.1. Bilgisayar Yazılım Dünyası
+
+Genel olarak çalışma hızı ile bellek ihtiyacı ters orantılıdır. Hızlı algoritma yavaş olana göre daha fazla bellek ihtiyacı duyar. Algoritma karmaşıklığı iki açıdan ele alınır birisi **zaman karmaşıklığı** diğeri **bellek karmaşıklığı**dır.
+
+## 4.2. Veri Yapıları ve Veri Modelleri
+
+### 4.2.1. Veri Modeli Türleri
+
+1. Bağlantı liste veri modeli
+   - Ardışlı erişim
+   - Dinamik yaklaşım
+   - Arama maliyeti O(n)
+   - Ekleme maliyeti O(1)
+   - Silme maliyeti O(1) veya O(n)
+   - Esnek bellek kullanımı
+2. Ağaç veri modeli
+   - Hızlı arama
+   - Algoritma karmaşıklığı logaritmik
+   - Farklı problemlere model olması
+   - Dinamik bellek kullanımı
+   - Tasarım esnekliği
+   - Kod ağacı
+3. Graf veri modeli
+   - Modelleme esnekliği
+   - En kısa yol
+   - Greedy yöntemi
+   - Kruskal algoritması
+   - Graf renklendirme
+   - Yol ağacı
+   - DFS ve BFS yaklaşımları
+   - Sosyal ilişki grafiği
+4. Durum makinası veri modeli
+   - Davranış modelleme
+   - Ardışıl yaklaşım
+   - Desen uyuşması
+   - Sözce arama
+   - Gramer çözümü
+   - Turing makinası
+5. Veri tabanında ilişkisel veri modeli
+   - Bilgilerin düzenli saklanması
+   - Hızlı arama/sorgulama
+   - Veriler arasında ilişki oluşturulması
+   - İnternet tarayıcı ortamında bilgi sorgulama
+   - Koruma
+   - Verinin arşivlenmesi
+6. Ağ veri modeli
+   - Ağ üzerinden karşılıklı çalışma
+   - IP Paketi
+   - İnternet
+   - Protokol kümeleri
+   - Ağ üzerinden veri aktarımı
+   - TCP/IP protokol kümesi
+
+## 4.3. Sıralama Algoritmaları
+
+1. **Araya sokma:** Sıralama süreci boyunca dizi iki parça gibi düşünülür. Sıralı olan ön taraf ve henüz sıralanmamış arka taraf
+2. **Seçmeli sıralama:** Önce dizinin ilk elemanı alınır ve daha sonra küme içerisindeki kalan elemanların en küçüğü arınır. Bulunduğu zaman ilk eleman ile karşılıklı yer değiştirilir. En olumlu yanı eğer herhangi bir eleman gerçek yerinde ise yer değiştirme işlemi yapılmamasıdır.
+3. **Kabarcık sıralaması:** Sıralanacak elemanlar üzerinde bir yönden diğer yöne doğru ilerlerken komşu iki elemanın yer değiştirmesi işlemine dayanır. Tasarımı basit, ancak etkin bir algoritma değildir.
+4. **Birleşmeli sıralama:** Böl ve yönet yaklaşımına dayanır. Rekürsif tasarlanması doğasına uygundur.
+5. **Kümeleme sıralaması:** İkili Kümeleme ağacı kurulmasına dayanır. İki yolu vardır birisi bir başka dizi gerektirmeksizin sırasız elemanların bulunduğu dizi üzerinde çalışır diğeri sıralı elemanların olacağı yeni bir dizi gerektirir.
+6. **Hızlı sıralama:** Böl ve yönet yaklaşımına dayanır.
+
+## 4.4. Arama Algoritmaları
+
+1. **Ardışıl veya doğrusal arama:** Aranan bulunana kadar komisyon çalışır.
+2. **İkili arama:** Köşeye sıkıştırma yöntemi.
+3. **Çırpı fonksiyonu:** Çırpı tablosu, çatışmaların çözümlenmesi
+4. **Metin içerisinde sözcük arama**
 
 # 5. Java ile Programlama
 
