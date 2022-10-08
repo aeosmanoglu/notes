@@ -52,6 +52,10 @@
     - [6.2.2. RISC (reduced instruction sasetid computer) Mimarisi](#622-risc-reduced-instruction-sasetid-computer-mimarisi)
     - [6.2.3. İşletim Sistemleri Ağ Özellikleri](#623-i̇şletim-sistemleri-ağ-özellikleri)
 - [7. Veri Tabanı Yönetim Sistemleri](#7-veri-tabanı-yönetim-sistemleri)
+  - [7.1. Veritabanı Yönetim Sistemleri](#71-veritabanı-yönetim-sistemleri)
+    - [7.1.1. Kavramlar](#711-kavramlar)
+    - [7.1.2. Yaklaşımlar](#712-yaklaşımlar)
+  - [Veri Modelleri](#veri-modelleri)
 - [8. Yazılım Mühendisliği](#8-yazılım-mühendisliği)
 - [9. Web Programlama](#9-web-programlama)
 - [10. Yazılım Proje Yönetimi](#10-yazılım-proje-yönetimi)
@@ -650,6 +654,40 @@ STORE Addr1, A
 6.  Bileşen nesne modeli (COM)/(DCOM)
 
 # 7. Veri Tabanı Yönetim Sistemleri
+
+## 7.1. Veritabanı Yönetim Sistemleri
+
+### 7.1.1. Kavramlar
+
+1. Ana veri tabloları (Master)
+2. İşlem tabloları (Transaction)
+3. Alan (Field) _col_
+   1. Anahtar alan (Key)
+   2. İkincil anahtar alan(Foreign key)
+4. Kayıt (Record) _row_
+5. Dataset
+6. Index: Tabloların belirtilen alanlara göre sıralanması ile oluşan data setleri ifade eder.
+
+### 7.1.2. Yaklaşımlar
+
+1. Geleneksel yaklaşım _(dosyalama)_
+2. Veritabanı yaklaşımı
+
+:::mermaid
+flowchart LR
+Kullanıcı1<-->Uygulama1<-->VTYS<-->db[(Database)]
+Kullanıcı2<-->Uygulama2<-->VTYS
+SQL<-->VTYS
+Kullanıcı3-->SQL-->Rapor
+:::
+
+## Veri Modelleri
+
+1. Hiyerarşik _bire-çok_
+2. Ağ _çoka-çok-_
+3. Nesneye yönelik: Karmaşık verileri kolay saklar, Büyük verinin işlenmesi yavaş.
+4. İlişkisel
+5. Varlık-İlişki modeli
 
 # 8. Yazılım Mühendisliği
 
