@@ -634,4 +634,215 @@ STORE Addr1, A
 
 # 9. Web Programlama
 
+## 9.1. HTML5
+
+### 9.1.1. Neden Önemli
+
+1. Yeni standartlar
+2. Hızlı kolay kodlama
+3. Modern
+4. Mobil cihaz desteği
+5. Tarayıcı desteği
+6. Temiz kodlama
+7. Semantik ve genişletilebilir
+8. Daha iyi veri girişi
+9. Video ve ses desteği
+10. CSS3 ile daha zengin içerikler
+11. Çevrimdışı uygulama yeteneği
+12. API desteği
+13. Yerel veri depolama
+14. Oyun programlama
+15. Mobil uygulama geliştirme
+
+### 9.1.2. Formlar
+
+```html
+<form>
+  <label for="fname">First name:</label><br />
+  <input type="text" id="fname" name="fname" />
+</form>
+```
+
+#### 9.1.2.1. Özellikleri
+
+| Attributes     | Açıklama                                                                                                |
+| -------------- | ------------------------------------------------------------------------------------------------------- |
+| accept-charset | Specifies the character encodings used for form submission                                              |
+| action         | Specifies where to send the form-data when a form is submitted                                          |
+| autocomplete   | Specifies whether a form should have autocomplete on or off                                             |
+| enctype        | Specifies how the form-data should be encoded when submitting it to the server (only for method="post") |
+| method         | Specifies the HTTP method to use when sending form-data                                                 |
+| name           | Specifies the name of the form                                                                          |
+| novalidate     | Specifies that the form should not be validated when submitted                                          |
+| rel            | Specifies the relationship between a linked resource and the current document                           |
+| target         | Specifies where to display the response that is received after submitting the form                      |
+
+### 9.1.3. Elemanlar
+
+```html
+<!--açılır liste-->
+<label for="cars">Choose a car:</label>
+<select id="cars" name="cars">
+  <option value="volvo" selected>Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+</select>
+```
+
+```html
+<!--büyük metin girişi-->
+<textarea name="message" rows="10" cols="30">
+The cat was playing in the garden.
+</textarea>
+```
+
+```html
+<button type="button" onclick="alert('Hello World!')">Click Me!</button>
+```
+
+```html
+<form action="/action_page.php">
+  <fieldset>
+    <legend>Personalia:</legend>
+    <label for="fname">First name:</label><br />
+    <input type="text" id="fname" name="fname" value="John" /><br />
+    <label for="lname">Last name:</label><br />
+    <input type="text" id="lname" name="lname" value="Doe" /><br /><br />
+    <input type="submit" value="Submit" />
+  </fieldset>
+</form>
+```
+
+```html
+<form action="/action_page.php">
+  <input list="browsers" />
+  <datalist id="browsers">
+    <option value="Internet Explorer"></option>
+    <option value="Firefox"></option>
+    <option value="Chrome"></option>
+    <option value="Opera"></option>
+    <option value="Safari"></option>
+  </datalist>
+</form>
+```
+
+#### 9.1.3.1. Input Types
+
+```html
+<input type="button" />
+<input type="checkbox" />
+<!--checkbox name attribute aynı olmalı-->
+<input type="color" />
+<input type="date" />
+<input type="datetime-local" />
+<input type="email" />
+<input type="file" />
+<input type="hidden" />
+<input type="image" />
+<input type="month" />
+<input type="number" />
+<input type="password" />
+<input type="radio" />
+<!--radio name attribute aynı olmalı-->
+<input type="range" />
+<input type="reset" />
+<input type="search" />
+<input type="submit" />
+<input type="tel" />
+<input type="text" />
+<input type="time" />
+<input type="url" />
+<input type="week" />
+```
+
+## 9.2. CSS3
+
+```css
+* {
+  color: red;
+  /*herşey*/
+}
+
+p {
+  color: red;
+}
+
+.class {
+  color: red;
+}
+
+#id {
+  color: red;
+}
+
+p.class {
+  color: red;
+  /*sınıfı 'class' olan paragraflar*/
+}
+
+.class1,
+.class2 {
+  color: red;
+  /*hem birinci hem ikinci sınıf ortak*/
+}
+
+.class1 > .class2 {
+  color: red;
+  /*birinci sınıfın hemen altındaki ikinci sınıf, çocuğu*/
+}
+
+.class1 .class2 {
+  color: red;
+  /*birinci sınıfın oğlu yada torunu olan ikinci sınıf*/
+}
+
+@font-face {
+  font-family: Sansation;
+  src: url(sansation_light.woff);
+}
+
+@keyframes myexample {
+  from {
+    top: 0px;
+  }
+  50% {
+    top: 100px;
+  }
+  to {
+    top: 200px;
+  }
+}
+```
+
+### 9.2.1. CSS Pseudo Classes & Elements
+
+[www.w3schools.com/css/css_pseudo_classes.asp](https://www.w3schools.com/css/css_pseudo_classes.asp)
+
+### 9.2.2. EcmaScript 6
+
+1. Scope
+2. Arrow fonksiyon
+3. For of döngüsü
+   1. String
+   2. Array
+   3. Map
+   4. Set
+4. Parametreler
+   1. Default
+   2. Rest (Dizi)
+   3. Template
+5. Map
+6. Set
+7. Built-in metotlar
+   1. Objeye obje ekleme `let depo = Object.assign({}, obje1, obje2);`
+   2. Array eleman arama
+   3. String tekrarlama
+   4. String arama
+   5. Number güvenlik kontrolü
+   6. Number işaret saptaması
+8. Modüller
+9. Class
+10. Promise
+
 # 10. Yazılım Proje Yönetimi
