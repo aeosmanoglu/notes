@@ -54,10 +54,20 @@
 - [7. Veri Tabanı Yönetim Sistemleri](#7-veri-tabanı-yönetim-sistemleri)
   - [7.1. Veritabanı Yönetim Sistemleri](#71-veritabanı-yönetim-sistemleri)
     - [7.1.1. Kavramlar](#711-kavramlar)
-    - [7.1.2. Yaklaşımlar](#712-yaklaşımlar)
+    - [7.1.2. Uygulamalar](#712-uygulamalar)
+    - [7.1.3. Yaklaşımlar](#713-yaklaşımlar)
   - [7.2. Veri Modelleri](#72-veri-modelleri)
 - [8. Yazılım Mühendisliği](#8-yazılım-mühendisliği)
 - [9. Web Programlama](#9-web-programlama)
+  - [9.1. HTML5](#91-html5)
+    - [9.1.1. Neden Önemli](#911-neden-önemli)
+    - [9.1.2. Formlar](#912-formlar)
+      - [9.1.2.1. Özellikleri](#9121-özellikleri)
+    - [9.1.3. Elemanlar](#913-elemanlar)
+      - [9.1.3.1. Input Types](#9131-input-types)
+  - [9.2. CSS3](#92-css3)
+    - [9.2.1. CSS Pseudo Classes & Elements](#921-css-pseudo-classes--elements)
+    - [9.2.2. EcmaScript 6](#922-ecmascript-6)
 - [10. Yazılım Proje Yönetimi](#10-yazılım-proje-yönetimi)
 
 # 1. Bilgisayar Mühendisliğine Giriş
@@ -615,7 +625,23 @@ STORE Addr1, A
 5. Dataset
 6. Index: Tabloların belirtilen alanlara göre sıralanması ile oluşan data setleri ifade eder.
 
-### 7.1.2. Yaklaşımlar
+### 7.1.2. Uygulamalar
+
+| Uygulama   | Ortam            | Boyut    | Yenilik, Özellik                                                    |
+| ---------- | ---------------- | -------- | ------------------------------------------------------------------- |
+| MS Access  | Windows (Lokal)  | 25 MB    |                                                                     |
+| MySQL      | Unix/Linux (Web) | 2 GB     | Trigger, Stored Procedure                                           |
+| IBM DB2    | IBM              |          | +Transaction Locking, Yüksek performans, yüksek maliyet             |
+| Informix   | Postgres         |          |                                                                     |
+| MS SQL     | Windows          | 4 TB     | Maliyetli, Güvenli                                                  |
+| Postgres   |                  | 64 TB    | Veri güvenliği ön planda, açık kaynak                               |
+| Oracle     |                  | Sınırsız | Yüksek güvenlik, yüksek maliyet                                     |
+| Sybase     |                  |          | Orta ve büyük ölçekli banka ve kamusal alan                         |
+| BerkeleyDB | Gömülü           | 256 TB   |                                                                     |
+| SQLite     | Native           |          |                                                                     |
+| NoSQL      |                  |          | İlişkisel olmayan veriler için (Not Only SQL) Çok yüksek performans |
+
+### 7.1.3. Yaklaşımlar
 
 1. Geleneksel yaklaşım _(dosyalama)_
 2. Veritabanı yaklaşımı
@@ -626,7 +652,7 @@ STORE Addr1, A
 
 1. Hiyerarşik _bire-çok_
 2. Ağ _çoka-çok_
-3. Nesneye yönelik: Karmaşık verileri kolay saklar, Büyük verinin işlenmesi yavaş.
+3. Nesneye yönelik: Karmaşık verileri kolay saklar, Büyük verinin işlenmesi yavaş. _Java_
 4. İlişkisel
 5. Varlık-İlişki modeli
 
