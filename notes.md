@@ -45,6 +45,7 @@
   - [4.3. Sıralama Algoritmaları](#43-sıralama-algoritmaları)
   - [4.4. Arama Algoritmaları](#44-arama-algoritmaları)
 - [5. Java ile Programlama](#5-java-ile-programlama)
+  - [5.1. Veri Tipleri ve Değişkenler](#51-veri-tipleri-ve-değişkenler)
 - [6. İşletim Sistemleri](#6-i̇şletim-sistemleri)
   - [6.1. Bilgisayarlar ve İşletim Sistemleri](#61-bilgisayarlar-ve-i̇şletim-sistemleri)
   - [6.2. Bilgisayar Mimarileri](#62-bilgisayar-mimarileri)
@@ -552,6 +553,95 @@ Genel olarak çalışma hızı ile bellek ihtiyacı ters orantılıdır. Hızlı
 4. **Metin içerisinde sözcük arama**
 
 # 5. Java ile Programlama
+
+## 5.1. Veri Tipleri ve Değişkenler
+
+> Her sınıf bir veri tipi, her veri tipi bir sınıftır
+
+> Ram'e direk kaydedebildiğim veriler ilkeldir. Küçük harf ile başlar.
+
+```java
+void topla(){
+   System.out.println("toplama işlemi yapılıtor...");
+}
+
+int topla(){
+   return 5;
+}
+
+Car car = new Car();
+System.out.println(car.door)
+/* Null */
+
+System.out.println(-4 / 0)
+/* -Infinity */
+
+System.out.println(0 / 0)
+/* NaN */
+
+public class Demo {
+   static final double AVOGADRO; /* Yanlış */
+   static final double PI = 3.14 /* 3,14 değil */
+   static int a; /* 0 */
+   int b = 1;
+
+   public static void main(String[] args) {
+      /* Java kutsal kitabının emri */
+      static int c = 3; /* Yanlış */
+      b = 4; /* Yanlış */
+   }
+}
+
+/*Recursive*/
+public static int sum(int k) {
+   if (k > 0) {
+      return k + sum(k - 1);
+   } else {
+      return 0;
+   }
+} /* 10 + sum(9) ... 10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1 + 0 */
+
+/* Construction, Inheritance, Polymorphism, Interface*/
+interface SporPaket{
+   void otomatikVites();
+   void farSensoru();
+   void yagmurSensoru();
+   void startStop();
+}
+
+abstract class Renault implements SporPaket{
+   public void otomatikVites(){
+      System.out.println("P, N, D, R");
+   }
+   abstract void havaYastıgı();
+}
+
+class Megane extends Renault{
+   public void farSensoru(){
+      System.out.println("Aydınlık, Karanlık");
+   }
+   public void yagmurSensoru(){
+      System.out.println("Çise, Normal, Sağanak");
+   }
+   public void startStop(){
+      System.out.println("Çalıştır, Durdur");
+   }
+   void havaYastıgı(){
+      System.out.println("Kaza");
+   }
+}
+
+class TestDrive{
+   public static void main(String args[]){
+      Renault r = new Megane();
+      r.otomatikVites();
+      r.farSensoru();
+      r.yagmurSensoru();
+      r.startStop();
+      r.havaYastıgı();
+   }
+}
+```
 
 # 6. İşletim Sistemleri
 
