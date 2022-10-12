@@ -58,6 +58,11 @@
     - [7.1.2. Uygulamalar](#712-uygulamalar)
     - [7.1.3. Yaklaşımlar](#713-yaklaşımlar)
   - [7.2. Veri Modelleri](#72-veri-modelleri)
+  - [7.3. Sorgulama](#73-sorgulama)
+  - [7.4. Fonksiyonlar](#74-fonksiyonlar)
+    - [7.4.1. Tek Satır](#741-tek-satır)
+      - [7.4.1.1. Karakter](#7411-karakter)
+      - [7.4.1.2. Genel](#7412-genel)
 - [8. Yazılım Mühendisliği](#8-yazılım-mühendisliği)
   - [8.1. Yazılım Mühendisliğine Giriş](#81-yazılım-mühendisliğine-giriş)
     - [8.1.1. Giriş](#811-giriş)
@@ -91,6 +96,13 @@
     - [9.2.1. CSS Pseudo Classes & Elements](#921-css-pseudo-classes--elements)
     - [9.2.2. EcmaScript 6](#922-ecmascript-6)
 - [10. Yazılım Proje Yönetimi](#10-yazılım-proje-yönetimi)
+  - [10.1. Yazılım Geliştirme Süreci](#101-yazılım-geliştirme-süreci)
+    - [10.1.1. Yazılım Geliştirme Temel İlkeleri](#1011-yazılım-geliştirme-temel-i̇lkeleri)
+    - [10.1.2. Yazılım Geliştirme Süreci](#1012-yazılım-geliştirme-süreci)
+    - [10.1.3. Yazılım Süreç (Geliştirme) Modelleri](#1013-yazılım-süreç-geliştirme-modelleri)
+  - [10.2. Planlama](#102-planlama)
+  - [10.3. Projenin Yürütülmesi](#103-projenin-yürütülmesi)
+  - [10.4. Kalite Güvence Yöntemi](#104-kalite-güvence-yöntemi)
 
 <div class="page"/>
 
@@ -781,6 +793,57 @@ STORE Addr1, A
 4. İlişkisel
 5. Varlık-İlişki modeli
 
+## 7.3. Sorgulama
+
+```SQL
+SELECT DISTINCT *, alan_1 AS "Alan Adı"
+FROM tablo
+WHERE NOT koşul AND koşul OR koşul --önce AND
+ORDER BY alan DESC --varsayılan ASC
+GROUP BY alan
+HAVING grup_koşulu
+
+--bir veri kümesi içinde arama
+WHERE koşul NOT IN (1, 2, 3)
+
+--arasında
+WHERE alan BETWEEN 5 AND 10
+
+--arama
+WHERE alan LIKE '_a%'
+```
+
+## 7.4. Fonksiyonlar
+
+> `**` veya `^` üs alma işlemi
+
+> **Tarih + Sayı** gün çıkarır. Sonuç tarihsel değildir.  
+> **Tarih1 + Tarih2** iki tarih arasındaki gün sayısı. Sonuç sayısal
+
+### 7.4.1. Tek Satır
+
+#### 7.4.1.1. Karakter
+
+1. Lower
+2. Upper
+3. Inıtcap
+4. Concat
+5. Substring('Metin', kaçKarakter, kaçıncıKarakter)
+6. Len
+7. CharIndex('Metin', 'ArananMetin', kaçıncıKarakterdenİtibaren)
+8. Left('Metin', kaçKarakter)
+9. Right('Metin', kaçKarakter)
+10. LTrim
+11. RTrim
+12. Replace('Metin', 'Bul', 'Değiştir')
+13. Reverse
+
+#### 7.4.1.2. Genel
+
+1. NVL/ISNULL(Ucret, 0)
+2. DECODE (Cinsiyet, 'E', 'ERKEK', 'K', 'KADIN', 'GAY') AS Cinsiyet
+3. CASE Cinsiyet, WHEN 'E', THEN 'ERKEK', WHEN 'K', THEN 'KADIN', ELSE 'GAY'
+
 <div class="page"/>
 
 # 8. Yazılım Mühendisliği
@@ -1196,3 +1259,55 @@ p.class {
 <div class="page"/>
 
 # 10. Yazılım Proje Yönetimi
+
+## 10.1. Yazılım Geliştirme Süreci
+
+### 10.1.1. Yazılım Geliştirme Temel İlkeleri
+
+1. Basitlik
+2. Tekrar kullanılabilirlik
+3. Süreklilik _(çökmemeli)_
+4. İzlenebilmeli
+5. Güvenlik
+
+### 10.1.2. Yazılım Geliştirme Süreci
+
+1. İhtiyaç
+   1. Planlı istek
+   2. Belirsiz başlangıçlar
+      1. Mevcut projede yapılan istek
+      2. Proje kapsamının değişmesi
+2. Planlama
+3. İhtiyaç analizi
+   1. Gerçekleştirebilme
+   2. Doğrulanabilme
+   3. Mananın tam anlaşılması
+   4. Çözüm değil istek ifade etme
+   5. Tutarlılık
+   6. Seviyesi ve yeri doğru olmalı
+4. Prototip geliştirme
+5. Tasarım
+6. Gerçekleştirilme
+7. Test
+8. Gözden geçirme
+9. Devreye alma
+
+### 10.1.3. Yazılım Süreç (Geliştirme) Modelleri
+
+1. Kod eksenli yazılım geliştirme modeli: code and fix (Allah belasını versin)
+2. Doğrusal modeller
+   1. Şelale
+   2. V Modeli
+3. Yinelemeli modeller
+   1. Artımlı geliştirme
+   2. Evrimsel geliştirme
+   3. Sarmal model
+4. Çevik geliştirme
+5. Modüler geliştirme
+6. Servis tabanlı
+
+## 10.2. Planlama
+
+## 10.3. Projenin Yürütülmesi
+
+## 10.4. Kalite Güvence Yöntemi
